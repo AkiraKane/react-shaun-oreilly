@@ -9,7 +9,7 @@ class App extends React.Component{}
 <React.Fragment></React.Fragment>  // better way, no clutter the DOM
 <></>  // equivalent to Fragment, but more consice
 
-// Export one component per file: default export
+// Export one component per file: default export, however, we can easily change names when import it
 export default Greeting
 
 // Better way: named exports from their respective files 
