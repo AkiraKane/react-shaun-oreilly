@@ -31,4 +31,10 @@ import { Greeting } from
 // 2. install styled-components library 
 // 3. inline css syntax
 
+// Hooks: add state and side effects to our functional React components
+const [numberOfClicks, setNumberOfClicks] = useState(0)
+// Array Destruction, 
+// numberOfClicks: current value of our state
+// setNumberOfClicks: function to change the value of the state
 
+// React will only re-render if the props or a value from one of the hooks changes
