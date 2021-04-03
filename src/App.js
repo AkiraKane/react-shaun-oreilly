@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {Greeting} from './Greeting'
-import { PeopleList} from "./PeopleList"
+import { PeopleList } from "./PeopleList"
 
 const people = [{
   name: "Ming",
