@@ -1,16 +1,17 @@
-import React, {useState} from "react"
+import React, { useEffect }from "react"
 
 
-export const CounterButton = () => {  
+export const CounterButton = ({numberOfClicks, onIncrement}) => {  
 
-    const [numberOfClicks, setNumberOfClicks] = useState(0)
-    
-    const increment = () => setNumberOfClicks(numberOfClicks + 1)
+    useEffect(() => {
+        console.log("useEffect function called")
+        // return () => console.log("unmounting!")
+    }, [])
 
     return (
         <>
         <p>You've clicked the button {numberOfClicks} times</p>
-        <button onClick={increment}>Click Me!</button>
+        <button onClick={onIncrement}>Click Me!</button>
         </>
     )
 }
