@@ -1,14 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 import {Greeting} from './Greeting'
+import { PeopleList} from "./PeopleList"
+
+const people = [{
+  name: "Ming",
+  age: 19,
+  hairColor: "Black" 
+}, {
+  name: "Li",
+  age: '30',
+  hairColor: "Brown"
+}, {
+  name: "Shu",
+  age: 35,
+  hairColor: 'Blonde'
+}]
 
 function App() {
+
+  // const displayAlert = () => {
+  //   alert("Hello!")
+  // }
 
   return (
     <div className="App">
       <header className="App-header">
-        <Greeting />
-        <img src={logo} className="App-logo" alt="logo" />
+        <p style={{ color: "red", fontSize: "96px" }}>Big Red Text</p>  
+        <Greeting name="Akira" numberOfMessages={0} />
+        <PeopleList people={people} />
+        <button onClick={() => alert("Hello!")}>Click Me!</button>
         <p>
           This is so cool!
         </p>

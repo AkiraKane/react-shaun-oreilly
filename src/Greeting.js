@@ -1,17 +1,18 @@
 import React from "react"
 
-export const Greeting = () => {
+export const Greeting = ({name, numberOfMessages}) => {
+    if (!name) return null 
     let isMorning = (new Date()).getHours() < 12
     let greetingHeader = isMorning 
-    ? <h3>Good Morning!</h3>
-    : <h3>Good Evening!</h3>
+    ? <h3>Good Morning {name} !</h3>
+    : <h3>Good Evening {name} !</h3>
 
     return (
         <>
             {greetingHeader}
-            <p>You have some messages</p> 
+            {numberOfMessages === 0 ? null : <p>You have {numberOfMessages} messages</p>}
         </>
     )
 }
 
-// export default Greeting
+// export default Greetings
