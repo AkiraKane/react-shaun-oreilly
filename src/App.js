@@ -5,6 +5,8 @@ import {Greeting} from './Greeting'
 import { PeopleList } from "./PeopleList"
 import { CounterButton } from "./CounterButton"
 import { CongratulationsMessage } from "./CongratulationsMessage"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { HomePage, CounterButtonPage, PeopleListPage} from "./pages"
 
 const people = [{
   name: "Ming",
@@ -34,16 +36,19 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {hideMessage
-        ? null
-        : <CongratulationsMessage 
-        numberOfClicks={numberOfClicks} 
-        threshold={10}
-        onHide={() => setHideMessage(true)} />}
-        <CounterButton  numberOfClicks={numberOfClicks} onIncrement={increment}/>
-        <Greeting name="Akira" numberOfMessages={20} />
-      </header>
+      <Router>
+        <Link to="/counter">Go to Counter Button Page</Link>
+        <Link to="/people-list">Go to People List Page</Link>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/counter/:name">
+          <CounterButtonPage />
+        </Route>
+        <Route path="/people-list">
+          <PeopleListPage />
+        </Route>
+      </Router>
     </div>
   );
 }
