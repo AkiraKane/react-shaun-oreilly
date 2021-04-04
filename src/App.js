@@ -5,8 +5,8 @@ import {Greeting} from './Greeting'
 import { PeopleList } from "./PeopleList"
 import { CounterButton } from "./CounterButton"
 import { CongratulationsMessage } from "./CongratulationsMessage"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { HomePage, CounterButtonPage, PeopleListPage} from "./pages"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage} from "./pages"
 
 const people = [{
   name: "Ming",
@@ -39,15 +39,23 @@ function App() {
       <Router>
         <Link to="/counter">Go to Counter Button Page</Link>
         <Link to="/people-list">Go to People List Page</Link>
-        <Route path="/" exact>
-          <HomePage />
-        </Route>
-        <Route path="/counter/:name">
-          <CounterButtonPage />
-        </Route>
-        <Route path="/people-list">
-          <PeopleListPage />
-        </Route>
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
+          <Route path="/counter">
+            <CounterButtonPage />
+          </Route>
+          <Route path="/people-list">
+            <PeopleListPage />
+          </Route>
+          <Route path="/protected">
+            <ProtectedPage />
+          </Route>
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );

@@ -6,11 +6,11 @@ import { parse } from "query-string"
 
 export const CounterButtonPage = () => {
 
-    const { name } = useParams()
+    // const { name } = useParams()
     const location = useLocation()
-    console.log(parse(location.search))
+    const startingValue = parse(location.search).startingValue
  
-    const [numberOfClicks, setNumberOfClicks] = useState(0)
+    const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue))
  
     const [hideMessage, setHideMessage] = useState(false)
       
@@ -18,7 +18,7 @@ export const CounterButtonPage = () => {
   
     return (
         <>
-        <h3>{name}'s Counter Button Page</h3>
+        <h3>The Counter Button Page</h3>
           {hideMessage
           ? null
           : <CongratulationsMessage 
