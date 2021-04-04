@@ -55,3 +55,9 @@ useEffect(() => {
 // 2. The second argument is the empty array, the useEffect hook will never be rerun. Only run when the component first renders and never after that. Really helpful when we fetch data from the server
 // 3. The function we pass to useEffect can return another function, and useEffect will call the function that we return when our component unmounts. In other words, when a component is being removed from the DOM.
 // 4. be careful about changing state from inside a useEffect hook
+
+// Forms are an integral part of many React applications
+// Controlled form: the state of our form is explicitly tracked
+// Uncotrolled form: we dont know about or interact with state of the form until the submit button is clicked
+
+// Any links we have in React application need to be inside our Router to work correctly
