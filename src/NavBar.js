@@ -13,10 +13,10 @@ export const NavBar = () => (
             <Link to="/people-list">People List</Link>
         </li>
         <li>
-            <Link to="/controlled">Controlled Form</Link>
+            <Link to="/forms">Forms</Link>
         </li>
         <li>
-            <Link to="/uncontrolled">Uncontrolled Form</Link>
+            <Link to="/user">User Profile</Link>
         </li>
     </ul>
 )

@@ -61,3 +61,7 @@ useEffect(() => {
 // Uncotrolled form: we dont know about or interact with state of the form until the submit button is clicked
 
 // Any links we have in React application need to be inside our Router to work correctly
+
+// useEffect hook allows us to trigger asynchronous logic from inside our components without making our components themselves asynchronous
+
+// When a component is wrapping another component, it will receive those child components in its props automatically
