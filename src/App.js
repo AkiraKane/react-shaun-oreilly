@@ -4,7 +4,15 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import { NavBar } from "./NavBar"
 import { FormsNavBar } from "./FormsNavBar"
-import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UncontrolledFormPage, UserProfilePage} from "./pages"
+import { HomePage, 
+        CounterButtonPage, 
+        PeopleListPage, 
+        NotFoundPage, 
+        ProtectedPage, 
+        ControlledFormPage, 
+        UncontrolledFormPage, 
+        UserProfilePage} from "./pages"
+import { UserDataLoader } from "./UserDataLoader"
 
 const people = [{
   name: "Ming",
@@ -51,7 +59,9 @@ function App() {
               <ProtectedPage />
             </Route>
             <Route path="/user">
-              <UserProfilePage />
+              <UserDataLoader>
+                <UserProfilePage />
+              </UserDataLoader>
             </Route>
             <Route path="/forms">
               <Router>
