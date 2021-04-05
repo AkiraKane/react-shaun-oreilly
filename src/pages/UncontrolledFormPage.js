@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Button } from "../Button"
 
 export const UncontrolledFormPage = () => {
     const nameInput = React.createRef()
@@ -30,14 +31,16 @@ export const UncontrolledFormPage = () => {
                  placeholder="Favorite Color" 
                  />
              </div>
-             <button onClick={e => {
+             <Button 
+             buttonColor="pink"
+             onClick={e => {
                  alert(`
                     Your name is ${nameInput.current.value},
                     your email is ${emailInput.current.value}, 
                     and your favorite color is ${favoriteColorInput.current.value}!
                  `)
                  e.preventDefault()  // to prevent this event from bubbling up to higher components
-             }}>Submit</button>
+             }}>Submit</Button>
         </form>
     )
 }
