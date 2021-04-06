@@ -1,17 +1,16 @@
-import React, { useState } from "react"
-import { useParams, useLocation } from "react-router-dom"
+import React, { useState, useEffect } from "react"
 import { CounterButton } from "../CounterButton"
 import { CongratulationsMessage } from "../CongratulationsMessage"
 import { parse } from "query-string"
 import { DisplayIf } from "../DisplayIf"
 
 export const CounterButtonPage = () => {
-
-    // const { name } = useParams()
-    const location = useLocation()
-    const startingValue = parse(location.search).startingValue || 0 
  
-    const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue))
+    const [numberOfClicks, setNumberOfClicks] = useState(Number(localStorage.getItem("numberOfClicks")) || 0)
+
+    useEffect(() => {
+      localStorage.setItem("numberOfClicks", numberOfClicks)
+    }, [numberOfClicks])
  
     const [hideMessage, setHideMessage] = useState(false)
       
