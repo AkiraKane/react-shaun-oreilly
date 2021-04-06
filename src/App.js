@@ -13,6 +13,7 @@ import { HomePage,
         UncontrolledFormPage, 
         UserProfilePage} from "./pages"
 import { UserDataLoader } from "./UserDataLoader"
+import { ThemeContext } from "./ThemeContext"
 
 const people = [{
   name: "Ming",
@@ -41,7 +42,8 @@ function App() {
   const increment = () => setNumberOfClicks(numberOfClicks + 1)
 
   return (
-    <div className="App">
+    <ThemeContext.Provider value="dark">
+      <div className="App">
       <Router>
         <NavBar />
         <div className="App-header">
@@ -86,7 +88,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </div>
+      </div>  
+    </ThemeContext.Provider>
   );
 }
 
