@@ -3,15 +3,12 @@ import { CounterButton } from "../CounterButton"
 import { CongratulationsMessage } from "../CongratulationsMessage"
 import { parse } from "query-string"
 import { DisplayIf } from "../DisplayIf"
+import { usePersistentState } from "../usePersistentState"
 
 export const CounterButtonPage = () => {
  
-    const [numberOfClicks, setNumberOfClicks] = useState(Number(localStorage.getItem("numberOfClicks")) || 0)
+    const [numberOfClicks, setNumberOfClicks] = usePersistentState("numberOfClicks", 0, Number)
 
-    useEffect(() => {
-      localStorage.setItem("numberOfClicks", numberOfClicks)
-    }, [numberOfClicks])
- 
     const [hideMessage, setHideMessage] = useState(false)
       
     const increment = () => setNumberOfClicks(numberOfClicks + 1)
